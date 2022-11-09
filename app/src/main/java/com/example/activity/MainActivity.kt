@@ -1,5 +1,6 @@
 package com.example.activity
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -13,6 +14,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var editLength: EditText
     private lateinit var btnCalculate: Button
     private lateinit var tvResult: TextView
+    private lateinit var btnInputBioData: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +25,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         editLength = findViewById(R.id.et_length)
         btnCalculate = findViewById(R.id.btn_calculate)
         tvResult = findViewById(R.id.tv_result)
+        btnInputBioData = findViewById(R.id.btn_input_bio_data)
 
         btnCalculate.setOnClickListener(this)
     }
