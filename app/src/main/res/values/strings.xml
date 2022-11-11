@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">activity</string>
+    <string name="biodata" />
+    <string name="nama_depan" />
+    <string name="nama_belakang" />
+    <string name="tanggal_lahir" />
+    <string name="alamat" />
+    <string name="nomor_telepon" />
+    <string name="result" />
+    <string name="penghitung_berat_ideal">Penghitung Berat Ideal</string>
+    <string name="register">Register Page</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.example.activity
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -21,21 +22,21 @@ class Biodata : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bioadata)
 
-        editNamaDepan = findViewById(R.id.et_nama_depan)
-        editNamaBelakang = findViewById(R.id.et_nama_belakang)
-        editAlamat = findViewById(R.id.et_alamat)
-        editTelefon = findViewById(R.id.et_nomor_telefon)
-        editTanggalLahir = findViewById(R.id.et_tanggal_lahir)
-        btnSimpan = findViewById(R.id.btn_simpan)
+        editNamaDepan = findViewById(R.id.edt_namaDepan)
+        editNamaBelakang = findViewById(R.id.edt_namaBelakang)
+        editAlamat = findViewById(R.id.edt_alamat)
+        editTelefon = findViewById(R.id.edt_phone)
+        editTanggalLahir = findViewById(R.id.edt_date)
+        btnSimpan = findViewById(R.id.btn_submit)
         tvResult = findViewById(R.id.tv_result)
-
         btnSimpan.setOnClickListener(this)
+
 
 
     }
 
     override fun onClick(p0: View?) {
-        if (p0?.id == R.id.btn_simpan) {
+        if (p0?.id == R.id.btn_submit) {
             val inputNamaDepan = editNamaDepan.text.toString().trim()
             val inputNamaBelakang = editNamaBelakang.text.toString().trim()
             val inputAlamat = editAlamat.text.toString().trim()
@@ -57,7 +58,7 @@ class Biodata : AppCompatActivity(), View.OnClickListener {
 
             if (inputAlamat.isEmpty()) {
                 isEmptyFields = true
-                editAlamat.error = "Field ini tidak boleh kosong"
+                editAlamat.error = "Field ini tidak boleh kosong ya"
             }
 
             if (inputTelefon.isEmpty()) {
@@ -104,12 +105,13 @@ class Biodata : AppCompatActivity(), View.OnClickListener {
             if (!isEmptyFields && !isInvalidDouble) {
                 val result = "Nama Depan: $namaDepan, Nama Belakang: $namaBelakang, Alamat: $alamat, Nomor Telefon: $telefon, Tanggal Lahir: $tanggalLahir"
                 tvResult.text = result.toString()
-
             }
         }
     }
 
     private fun toString(inputTanggalLahir: String): String {
         return inputTanggalLahir
+
     }
+
 }
